@@ -1,0 +1,297 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tabs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+            type='text/css'
+        >
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+
+body {
+    font-family: 'Poppins';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 16px;
+    background-color: grey;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tabs-container {
+	padding: 16px;
+    width: 100%;
+    max-width: 480px;
+    min-width: 320px;
+    display: flex;
+	margin: 10px;
+	border-radius: 16px;
+    background-color: #FFF;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;	
+}
+
+header {
+    position: relative;
+}
+
+.tab-content-wrapper {
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: 300px;
+    transition: all 0.45s ease-in-out;
+    padding: 0 16px;
+}
+
+.tab-content h2 {
+    color: #3e3e3e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+.tab-content {
+    font-size: 0.8rem;
+    min-height: 300px;
+    min-width: 240px;
+    overflow-x: auto;
+    transition: all 0.45s ease-in-out;
+}
+
+.tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #F0F0F0;
+    list-style-type: none;
+    padding-right: 16px;
+    gap: 8px;
+}
+
+.tabs a {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
+    border-radius: 8px;
+    justify-content: start;
+    padding: 12px;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabs a img {
+    height: 20px;
+    width: 20px;
+}
+
+.tabs .active, .tabs a:hover {
+    font-weight: 700;
+    outline: none;
+    color:white;
+    background-color: #3e3e3e;
+}
+
+
+.tabs a svg {
+    stroke: black;
+}
+
+.tabs .active svg {
+    stroke: white;
+}
+
+.tabs a:hover svg {
+    stroke: black;
+}
+        </style>
+    </head>
+    <body>
+        <div class="tabs-container">
+            <ul class="tabs">
+                <li>
+                    <a id="tab1" title="Analytics" href="#tab1">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                             fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M3 3v18h18"></path>
+                            <path d="M20 18v3"></path>
+                            <path d="M16 16v5"></path>
+                            <path d="M12 13v8"></path>
+                            <path d="M8 16v5"></path>
+                            <path d="M3 11c6 0 5 -5 9 -5s3 5 9 5"></path>
+                        </svg>
+                        Encrypt
+                    </a>
+                </li>
+                <li>
+                    <a id="tab2" title="Reports" href="#tab2">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                             fill="none" stroke-linecap="round" stroke-linejoin="round"
+                        >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M7 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                            <path d="M7 3v4h4"></path>
+                            <path d="M9 17l0 4"></path>
+                            <path d="M17 14l0 7"></path>
+                            <path d="M13 13l0 8"></path>
+                            <path d="M21 12l0 9"></path>
+                        </svg>
+                        Decrypt
+                    </a>
+                </li>
+                </li>
+            </ul>
+            <div class="tab-content-wrapper">
+                <section id="tab1-content" class="tab-content">
+                    <h2>Ecnryption</h2>
+                    <!-- Encryption Section -->
+       <div class="row" style="margin-left: 10%; margin-top: 6%;">
+        <div class="col-sm-12 col-lg-11">
+          <div class="card">
+            <div class="card-body">
+              <div class="col-md-6 mb-3 justify-content">
+                <h4>Encryption</h4>
+              </div>
+              <p>Upload a Single file to be encrypted.</p>
+              <form>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label" for="validationDefault01">Password</label>
+                    <input type="password" class="form-control" id="validationDefault01" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label" for="validationDefault02">Confirm Password</label>
+                    <input type="password" class="form-control" id="validationDefault02" required>
+                  </div>
+                </div>
+                <div class="wrapper" style="margin-top: 2%;">
+                  <form style="align-items: center;">
+                    <input class="file-input" type="file" name="file" hidden>
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Browse File to Upload</p>
+                  </form>
+                  <section class="progress-area"></section>
+                  <section class="uploaded-area"></section>
+                </div>
+              </form>
+              <div class="btn btn-primary d-block mt-4" style="width: 750px; margin-left: 13%;">
+                <div class="text-icon">
+                  <span class="text">Encrypt your files !!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                </section>
+                <section id="tab2-content" class="tab-content">
+                    <h2>Decrypt</h2>
+                     <!-- Decryption Section -->
+<div class="row" style="margin-left: 4%; margin-top: 6%;">
+  <div class="col-sm-12 col-lg-10" style="margin-left: 8%;">
+    <div class="card">
+      <div class="card-body">
+        <div class="col-md-6 mb-3 justify-content">
+          <h4>Decryption</h4>
+        </div>
+        <p>Enter the file path to decrypt your encrypted files.</p>
+        <form>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="validationDefault01">Password</label>
+              <input type="password" class="form-control" id="validationDefault01" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label" for="validationDefault02">File name/path</label>
+              <input type="text" class="form-control" id="validationDefault02" required>
+            </div>
+          </div>
+        </form>
+        <div class="btn btn-primary d-block mt-4" style="width: 650px; margin-left: 10%;">
+          <div class="text-icon">
+            <span class="text">Decrypt your files !!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+                </section> 
+            </div>
+        </div>
+        <script>
+                  const allLinks = document.querySelectorAll(".tabs a");
+const allTabs = document.querySelectorAll(".tab-content")
+const tabContentWrapper = document.querySelector(".tab-content-wrapper");
+
+const shiftTabs = (linkId) => {
+  allTabs.forEach((tab, i) => {
+      
+    if (tab.id.includes(linkId)) {
+      allTabs.forEach((tabItem) => { 
+        tabItem.style = `transform: translateY(-${i*300}px);`;
+      });
+    }
+  });
+}
+
+allLinks.forEach((elem) => {
+  elem.addEventListener('click', function() {
+    const linkId = elem.id;
+    const hrefLinkClick = elem.href;
+
+    allLinks.forEach((link, i) => {
+      if (link.href == hrefLinkClick){
+        link.classList.add("active");
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    shiftTabs(linkId);
+  });
+});
+
+//? handle proper selection for initial load
+const currentHash = window.location.hash;
+
+let activeLink = document.querySelector(`.tabs a`);
+
+if (currentHash) {
+  const visibleHash = document.getElementById(
+    `${currentHash.replace('#', '')}`
+  );
+
+  if (visibleHash) {
+    activeLink = visibleHash;
+  }
+}
+
+activeLink.classList.toggle('active');
+
+shiftTabs(activeLink.id);
+        </script>
+    </body>
+</html>
+    

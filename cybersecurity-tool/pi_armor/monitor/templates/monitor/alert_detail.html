@@ -1,0 +1,5 @@
+<h1>Alert Detail</h1>
+<h2>{{ alert.attack_type }} from {{ alert.attacker_ip }}</h2>
+<p>Date: {{ alert.timestamp }}</p>
+<p>Details: {{ alert.details }}</p>
+<a href="{% url 'alert_list' %}">Back to alerts</a>

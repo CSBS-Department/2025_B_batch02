@@ -1,0 +1,11 @@
+<h2>Alerts</h2>
+<ul>
+    {% for alert in alerts %}
+        <li>
+            <strong>{{ alert.attack_type }}:</strong> {{ alert.attacker_ip }} at {{ alert.timestamp }}
+            <p>{{ alert.details }}</p>
+        </li>
+    {% empty %}
+        <li>No alerts</li>
+    {% endfor %}
+</ul>
